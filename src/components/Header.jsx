@@ -96,7 +96,7 @@ const Header = () => {
               >
                 <Box
                   sx={{
-                    bgcolor: "#0f171e",
+                    bgcolor: "#1a242f",
                     height: "100%",
                   }}
                 >

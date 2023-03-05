@@ -1,8 +1,10 @@
+import Layout from "../Layout/Layout";
+
 const MovieCardPage = () => {
   return (
-    <div className="pt-40">
+    <Layout>
       <div>this is cardpage</div>
-    </div>
+    </Layout>
   );
 };
 

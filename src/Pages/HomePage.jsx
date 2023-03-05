@@ -1,8 +1,10 @@
+import Layout from "../Layout/Layout";
+
 const HomePage = () => {
   return (
-    <div className="bg-red-200 w-screen h-screen">
+    <Layout>
       <div>home</div>
-    </div>
+    </Layout>
   );
 };
 
