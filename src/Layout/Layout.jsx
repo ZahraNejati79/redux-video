@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="bg-primary w-screen h-screen pt-20 ">{children}</main>
+      <main className="py-32 ">{children}</main>
       <Footer />
     </>
   );

@@ -9,9 +9,7 @@ export const moviesSlice = createSlice({
   initialState,
   reducers: {
     addMovies: (state, { payload }) => {
-      console.log("ghabl", state);
       state.movies = payload;
-      console.log("bad", state.movies);
     },
   },
 });
