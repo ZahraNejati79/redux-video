@@ -1,3 +1,4 @@
+import { CssBaseline } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./Pages/HomePage";
@@ -7,14 +8,16 @@ import NotFoundPage from "./Pages/NotFoundPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/movie/:omdbID" element={<MovieDetailPage />} />
-        <Route path="/card" element={<MovieCardPage />} />
-        <Route element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movie/:omdbID" element={<MovieDetailPage />} />
+          <Route path="/card" element={<MovieCardPage />} />
+          <Route element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
