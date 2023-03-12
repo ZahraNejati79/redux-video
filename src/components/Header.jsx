@@ -1,5 +1,6 @@
 import {
   AccountCircle,
+  ArrowForward,
   ExpandLess,
   ExpandMore,
   Home,
@@ -34,12 +35,26 @@ import {
 } from "react-router-dom";
 import { Box } from "@mui/system";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  fetchAsyncMovies,
+  fetchAsyncShows,
+  setSearchMovie,
+} from "../features/Movies/movieSlice";
 
 const Header = () => {
   const [openSearch, setOpenSearch] = useState(false);
   const [tabValue, setTabValue] = useState(0);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const dispatch = useDispatch();
+
+  const submitSearchHandler = () => {
+    dispatch(fetchAsyncMovies(searchValue));
+    dispatch(fetchAsyncShows(searchValue));
+    setSearchValue("");
+  };
 
   return (
     <>
@@ -54,11 +69,21 @@ const Header = () => {
               />
               <InputBase
                 placeholder="search"
+                value={searchValue}
                 className={
                   openSearch
                     ? "text-fontPrimary  md:flex  ml-2"
                     : "text-fontPrimary hidden md:flex  ml-2"
                 }
+                onChange={(e) => setSearchValue(e.target.value)}
+              />
+              <ArrowForward
+                className={
+                  openSearch
+                    ? "flex cursor-pointer"
+                    : "hidden sm:flex cursor-pointer"
+                }
+                onClick={() => submitSearchHandler()}
               />
             </div>
           </div>
