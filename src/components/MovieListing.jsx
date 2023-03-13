@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import { getAllMovies, getAllShows } from "../features/Movies/movieSlice";
-import MovieCard from "./MovieCard";
+import Movie from "./Movie";
 
 const MovieListing = () => {
   const movies = useSelector(getAllMovies);
@@ -16,7 +16,7 @@ const MovieListing = () => {
     movies.Response === "True" ? (
       <Grid container spacing={2} className="container px-1 md:px-8">
         {movies.Search.map((movie, index) => (
-          <MovieCard movie={movie} />
+          <Movie movie={movie} />
         ))}
       </Grid>
     ) : (
@@ -27,7 +27,7 @@ const MovieListing = () => {
     shows.Response === "True" ? (
       <Grid container spacing={2} className="container px-1 md:px-8">
         {shows.Search.map((shows, index) => (
-          <MovieCard movie={shows} />
+          <Movie movie={shows} />
         ))}
       </Grid>
     ) : (

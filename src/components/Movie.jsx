@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const MovieCard = ({ movie }) => {
+const Movie = ({ movie }) => {
   return (
     <>
       <Grid item xs={6} md={4} lg={2}>
@@ -32,4 +32,4 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-export default MovieCard;
+export default Movie;

@@ -2,8 +2,8 @@ import { CssBaseline } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./Pages/HomePage";
-import MovieCardPage from "./Pages/MovieCardPage";
 import MovieDetailPage from "./Pages/MovieDetailPage";
+import MoviePlaylist from "./Pages/MoviePlaylist";
 import NotFoundPage from "./Pages/NotFoundPage";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movie/:imdbID" element={<MovieDetailPage />} />
-          <Route path="/card" element={<MovieCardPage />} />
+          <Route path="/playList" element={<MoviePlaylist />} />
           <Route element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

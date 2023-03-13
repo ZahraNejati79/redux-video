@@ -6,6 +6,7 @@ import {
   Home,
   Logout,
   MenuOutlined,
+  OndemandVideo,
   Search,
   ShoppingBasket,
 } from "@mui/icons-material";
@@ -32,6 +33,7 @@ import {
   Route,
   Switch,
   Link as RouterLink,
+  Link,
 } from "react-router-dom";
 import { Box } from "@mui/system";
 import { useState } from "react";
@@ -44,7 +46,7 @@ import {
 
 const Header = () => {
   const [openSearch, setOpenSearch] = useState(false);
-  const [tabValue, setTabValue] = useState(0);
+  const [tabValue, setTabValue] = useState(1);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -96,16 +98,21 @@ const Header = () => {
                 }}
               >
                 <Tab
-                  to="/card"
+                  value={0}
+                  to="/playList"
                   component={RouterLink}
-                  icon={<ShoppingBasket className="text-fontPrimary " />}
+                  icon={<OndemandVideo className="text-fontPrimary " />}
                 />
                 <Tab
+                  value={1}
                   to="/"
                   component={RouterLink}
                   icon={<Home className="text-fontPrimary " />}
                 />
-                <Tab icon={<AccountCircle className="text-fontPrimary " />} />
+                <Tab
+                  value={2}
+                  icon={<AccountCircle className="text-fontPrimary " />}
+                />
               </Tabs>
             </div>
             <div>
@@ -126,22 +133,26 @@ const Header = () => {
                   }}
                 >
                   <List>
-                    <ListItem>
-                      <ListItemButton sx={{ color: "white" }}>
-                        <ListItemIcon>
-                          <ShoppingBasket sx={{ color: "white" }} />
-                        </ListItemIcon>
-                        <ListItemText primary="Card" />
-                      </ListItemButton>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemButton sx={{ color: "white" }}>
-                        <ListItemIcon>
-                          <Home sx={{ color: "white" }} />
-                        </ListItemIcon>
-                        <ListItemText primary="Home" />
-                      </ListItemButton>
-                    </ListItem>
+                    <Link to="/playList">
+                      <ListItem>
+                        <ListItemButton sx={{ color: "white" }}>
+                          <ListItemIcon>
+                            <OndemandVideo sx={{ color: "white" }} />
+                          </ListItemIcon>
+                          <ListItemText primary="Playlist" />
+                        </ListItemButton>
+                      </ListItem>
+                    </Link>
+                    <Link to="/">
+                      <ListItem>
+                        <ListItemButton sx={{ color: "white" }}>
+                          <ListItemIcon>
+                            <Home sx={{ color: "white" }} />
+                          </ListItemIcon>
+                          <ListItemText primary="Home" />
+                        </ListItemButton>
+                      </ListItem>
+                    </Link>
                     <ListItem>
                       <ListItemButton
                         sx={{ color: "white" }}
