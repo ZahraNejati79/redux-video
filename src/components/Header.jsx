@@ -97,12 +97,12 @@ const Header = () => {
                   setTabValue(value);
                 }}
               >
-                <Tab
+                {/* <Tab
                   value={0}
                   to="/playList"
                   component={RouterLink}
                   icon={<OndemandVideo className="text-fontPrimary " />}
-                />
+                /> */}
                 <Tab
                   value={1}
                   to="/"
@@ -111,7 +111,10 @@ const Header = () => {
                 />
                 <Tab
                   value={2}
+                  to="/signup"
+                  component={RouterLink}
                   icon={<AccountCircle className="text-fontPrimary " />}
+                  onClick={() => console.log("login")}
                 />
               </Tabs>
             </div>
@@ -133,7 +136,7 @@ const Header = () => {
                   }}
                 >
                   <List>
-                    <Link to="/playList">
+                    {/* <Link to="/playList">
                       <ListItem>
                         <ListItemButton sx={{ color: "white" }}>
                           <ListItemIcon>
@@ -142,7 +145,7 @@ const Header = () => {
                           <ListItemText primary="Playlist" />
                         </ListItemButton>
                       </ListItem>
-                    </Link>
+                    </Link> */}
                     <Link to="/">
                       <ListItem>
                         <ListItemButton sx={{ color: "white" }}>

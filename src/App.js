@@ -5,6 +5,7 @@ import HomePage from "./Pages/HomePage";
 import MovieDetailPage from "./Pages/MovieDetailPage";
 import MoviePlaylist from "./Pages/MoviePlaylist";
 import NotFoundPage from "./Pages/NotFoundPage";
+import SignupPage from "./Pages/SignupPage";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movie/:imdbID" element={<MovieDetailPage />} />
-          <Route path="/playList" element={<MoviePlaylist />} />
+          {/* <Route path="/playList" element={<MoviePlaylist />} /> */}
+          <Route path="/signup" element={<SignupPage />} />
           <Route element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

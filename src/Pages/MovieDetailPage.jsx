@@ -1,10 +1,4 @@
-import {
-  EventNote,
-  Movie,
-  QueryBuilder,
-  Star,
-  ThumbUp,
-} from "@mui/icons-material";
+import { EventNote, QueryBuilder, Star, ThumbUp } from "@mui/icons-material";
 import { Card, CardContent, CardMedia, Grid } from "@mui/material";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,12 +22,24 @@ const MovieDetailPage = () => {
   return (
     <Layout>
       <div className="container">
-        <section>
+        <section className="flex items-center justify-center">
           <Card className="p-8 bg-primary">
             <Grid container>
               <Grid item lg={8}>
                 <CardContent className="flex flex-col text-fontPrimary ">
                   <h1 className="text-3xl mb-4">{selectMovieOrShow.Title}</h1>
+
+                  <CardMedia
+                    className=" lg:hidden mb-10"
+                    sx={{ height: 400, width: 300 }}
+                  >
+                    <img
+                      className="w-full h-full"
+                      src={selectMovieOrShow.Poster}
+                      alt={selectMovieOrShow.Title}
+                    />
+                  </CardMedia>
+
                   <div className="text-fontSecondary ">
                     <span className="mr-4">
                       IMDB Raiting
@@ -97,7 +103,10 @@ const MovieDetailPage = () => {
                 </CardContent>
               </Grid>
               <Grid item lg={4}>
-                <CardMedia sx={{ height: 400, width: 300 }}>
+                <CardMedia
+                  className="hidden lg:flex"
+                  sx={{ height: 400, width: 300 }}
+                >
                   <img
                     className="w-full h-full"
                     src={selectMovieOrShow.Poster}
